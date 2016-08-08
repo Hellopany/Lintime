@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="kprc_school" namespace="/kprc/school" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.kprc.action.SchoolAction">
+			<result name="add">add.jsp</result>
+			<result name="list">student_list.jsp</result>
+			<result name="examine_list">examine_list.jsp</result>
+			<result name="examine_detail">examine_detail.jsp</result>
+			<result name="student_detail">student_detail.jsp</result>
+			<result name="modify">student_modify.jsp</result>
+			<result name="detail">detail.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/kprc/school</param>
+			</result>
+		</action>
+	</package>
+	<package name="kprc_student" namespace="/kprc/student" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.kprc.action.StudentAction">
+			<result name="orgdetail">student-org.jsp</result>			
+			<result name="detail">detail.jsp</result>			
+			<result name="modify">modify.jsp</result>
+			<result name="list">/kprc/school/students-school.jsp</result>
+		</action>
+	</package>
+	<package name="kprc_advertise" namespace="/kprc/advertise" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.kprc.action.AdvertiseForAction">
+			<result name="studentlist">jobs-student.jsp</result>
+			<result name="orglist">jobs-org.jsp</result>
+			<result name="adminlist">jobs-student.jsp</result>
+			<result name="orgdetail">job-org.jsp</result>
+			<result name="detail">job-student.jsp</result>
+			<result name="advertiselist">jobs-org.jsp</result>
+			<result name="add">job-new.jsp</result>
+			<result name="modify">job-edit.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">advertiselist</param>
+				<param name="namespace">/kprc/advertise</param>
+			</result>
+		</action>
+	</package>
+</struts>

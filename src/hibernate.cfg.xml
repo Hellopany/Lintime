@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQL5Dialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/seniorpersonnel?userUnicode=true&amp;characterEncoding=utf-8
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">123456</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.format_sql">false</property>
+		<property name="hibernate.current_session_context_class">
+			thread
+		</property>
+		
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.timeout">120</property>
+		<property name="hibernate.c3p0.max_statements">100</property>
+		<property name="hibernate.c3p0.idle_test_period">120</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">true</property>
+
+		<mapping resource="cn/kepu/ability/common/bean/User.hbm.xml" />
+		<mapping resource="cn/kepu/ability/common/bean/Attachment.hbm.xml" />
+		<mapping resource="cn/kepu/ability/common/bean/Changepas.hbm.xml" />
+		<mapping resource="cn/kepu/ability/common/bean/TransMessage.hbm.xml" />
+
+		<mapping resource="cn/kepu/ability/kprc/bean/AdvertiseFor.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/AdvertiseForApply.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/School.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/SPMember.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/Student.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentCareer.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentEducation.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentHonor.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentPaper.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentPractice.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentRelation.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentResearch.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentResearchActivity.hbm.xml" />
+		<mapping resource="cn/kepu/ability/kprc/bean/StudentSchoolRoll.hbm.xml" />
+        <mapping resource="cn/kepu/ability/kprc/bean/Tcu.hbm.xml"/>
+        
+	</session-factory>
+</hibernate-configuration>

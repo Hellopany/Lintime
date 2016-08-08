@@ -1,0 +1,71 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>导入学生</title>
+	<link rel="stylesheet" th:href="@{/assets/css/lcell-beike.min.css}" href="./assets/css/libs.css" />
+	<link rel="stylesheet" th:href="@{/assets/css/app.css}" href="./assets/css/app.css" />
+	<!--[if lt IE 9]>
+	<script th:src="@{/assets/js/html5shiv.min.js}" src="./assets/js/html5shiv.min.js"></script>
+	<script th:src="@{/assets/js/respond.min.js}" src="./assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body id="students">
+	<header th:fragment="header (page)" class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/}">高层次科普人才数据管理系统</a>
+			</div>
+			<div class="navbar-collapse collapse">
+                
+                
+                
+                
+			</div>
+		</div>
+	</header>
+	<main style="min-height:480px">
+ <div class="container">
+    <div class="page-header">
+        <div class="pull-right">
+            <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+        </div>
+        <h1>导入学生</h1>
+    </div>
+    <form class="form-horizontal" method="post">
+        <div class="alert alert-info">
+            <strong>说明：</strong> 请下载<a href="#">Excel模板</a>，填写学生信息后，上传导入。
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="file">学生信息表格</label>
+            <div class="col-sm-6">
+                <input type="file" id="file" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4">
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)"><i class="glyphicon glyphicon-ok"></i> 导入</button>
+            </div>
+        </div>
+    </form>
+</div>
+    </main>
+	<footer th:fragment="footer">
+		<hr/>
+		<div class="container">
+			<div class="footer-title text-muted">
+				<p>Copyright &copy; 2016  All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+	<th:block th:fragment="js">
+	<script th:src="@{/assets/js/libs.min.js}" src="./assets/js/libs.min.js"></script>
+    
+	</th:block>
+</body>
+</html>

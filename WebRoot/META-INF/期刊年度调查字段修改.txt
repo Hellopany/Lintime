@@ -1,0 +1,3 @@
+数据库表 pd_survey_base_prizeaid  字段 annual 改为varchar  10
+		pd_survey_base     字段eleformat 改为varchar  10
+        pd_survey_base     字段10services 改为varchar  

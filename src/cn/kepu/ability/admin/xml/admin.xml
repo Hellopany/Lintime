@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="admin_manage" namespace="/admin/manage" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.UserAction">
+			<result name="index">/admin/index.jsp</result>
+		</action>
+	</package>
+	<package name="admin_school" namespace="/admin/school" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.SchoolAction">
+			<result name="schools">/admin/school/schools.jsp</result>
+			<result name="detail">/admin/school/school.jsp</result>
+			<result name="add">/admin/school/school-new.jsp</result>
+			<result name="modify">/admin/school/school-edit.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">listschool</param>
+				<param name="namespace">/admin/school</param>
+			</result>
+		</action>
+	</package>
+	<package name="admin_student" namespace="/admin/student" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.StudentAction">
+			<result name="students">/admin/student/students.jsp</result>
+			<result name="student">/admin/student/student.jsp</result>
+		</action>
+	</package>
+	<package name="admin_org" namespace="/admin/org" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.MemberAction">
+			<result name="add">/admin/org/org-new.jsp</result>
+			<result name="modify">/admin/org/org-edit.jsp</result>
+			<result name="orgs">/admin/org/orgs.jsp</result>
+			<result name="org">/admin/org/org.jsp</result>
+			<result name="advertises">/admin/org/jobs-org.jsp</result>
+			<result name="advertise">/admin/org/job-org.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">listorg</param>
+				<param name="namespace">/admin/org</param>
+			</result>
+		</action>
+	</package>
+    <package name="admin_tcu" namespace="/admin/tcu" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.TcuAction">
+			<result name="add">/admin/tcu/addtcu.jsp</result>
+			<result name="tcus">/admin/tcu/tcus.jsp</result>
+			<result name="tcu">/admin/tcu/tcu.jsp</result>
+			<result name="modify">/admin/tcu/modifytcu.jsp</result>
+			<result name="advertises">/admin/org/jobs-org.jsp</result>
+			<result name="advertise">/admin/org/job-org.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">listtcus</param>
+				<param name="namespace">/admin/tcu</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="admin_advertise" namespace="/admin/advertise" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.AdvertiseForAction">
+			<result name="list">/admin/org/jobs-org.jsp</result>
+			<result name="detail">/admin/org/job-org.jsp</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/admin/advertise</param>
+			</result>
+		</action>
+	</package>
+	<package name="admin_statics" namespace="/admin/statics" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.admin.action.StaticsAction">
+				<result name="statics">/admin/statics/statics.jsp</result>
+				<result name="staticssum">/admin/statics/staticssum.jsp</result>
+		</action>
+	</package>
+</struts>

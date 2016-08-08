@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* 设置提交状态的颜色 */
+
+
+/*用户端的修改提交状态*/
+.statusU	/* 数据保存，但未提交*/
+{
+color:blue;
+}
+
+.statusS	/* 数据已经提交*/
+{
+color:lightseagreen;
+}
+
+.statusC	/* 初审通过*/
+{
+color:green;
+}
+
+
+.statusR	/*初审核不通过*/
+{
+color:red;
+}
+
+.statusV	/* 复审通过*/
+{
+color:green;
+}
+
+.statusM	/* 审核不通过，需要重新修改*/
+{
+color:red;
+}
+
+.statusF	/* 审核不通*/
+{
+color:orange;
+}

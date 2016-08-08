@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="user" namespace="/admin" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.common.action.UserAction">
+			<result name="login">login.jsp</result>
+			<result name="index">index.jsp</result>
+			<result name="change_password">/user/change_password.jsp</result>
+			<result name="to_change_password" type="redirectAction">
+				<param name="actionName">changepassword</param>
+				<param name="namespace">/</param>
+				<param name="systype">${systype}</param>
+			</result>
+			<result name="change_info">/user/change_info.jsp</result>
+			<result name="to_change_info" type="redirectAction">
+				<param name="actionName">changeinfo</param>
+				<param name="namespace">/</param>
+				<param name="systype">${systype}</param>
+			</result>
+			
+			<result name="to_set">/admin/to_set.jsp</result>
+			<result name="reset_success">/user/reset_success.jsp</result>
+			<result name="to_reset" type="redirectAction">
+				<param name="actionName">forgetPass</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="reset_password">/user/setnew_password.jsp</result>
+			<result name="statistic">/user/statistic.jsp</result>
+		</action>
+	</package>
+	<package name="member" namespace="/" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.common.action.MemberAction">
+		    <result name="list">/publish/list.jsp</result>
+		    <result name="detail">/publish/detail.jsp</result>
+			<result name="index">/login.jsp</result>
+			<result name="school_index">/kprc/school/index-school.jsp</result>
+			<result name="student_index">/kprc/student/index-student.jsp</result>
+			<result name="org_index">/kprc/org/index-org.jsp</result>
+			<result name="tcu_index">/kprc/tcu/index-tcu.jsp</result>
+			<result name="admin_login">/admin/login.jsp</result>
+			<result name="change_password">/user/change_password.jsp</result>
+			<result name="to_change_password" type="redirectAction">
+				<param name="actionName">changepassword</param>
+				<param name="namespace">/</param>
+				<param name="systype">${systype}</param>
+			</result>
+			<result name="change_info">/user/change_info.jsp</result>
+			<result name="to_change_info" type="redirectAction">
+				<param name="actionName">changeinfo</param>
+				<param name="namespace">/</param>
+				<param name="systype">${systype}</param>
+			</result>
+			
+			<result name="to_set">/user/to_set.jsp</result>
+			<result name="reset_success">/user/reset_success.jsp</result>
+			<result name="to_reset" type="redirectAction">
+				<param name="actionName">forgetPass</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="registe">/kprc/org/registe.jsp</result>
+			<result name="finishreg">/login.jsp</result>
+		</action>
+	</package>
+	<package name="message" namespace="/messages" extends="default">
+		<action name="*" method="{1}" class="cn.kepu.ability.common.action.TransMessageAction">
+			<result name="orglist">/kprc/messages/messages-org.jsp</result>
+			<result name="studentlist">/kprc/messages/messages-student.jsp</result>
+			<result name="schoollist">/kprc/messages/messages-school.jsp</result>
+			<result name="tculist">/kprc/messages/messages-tcu.jsp</result>
+			<result name="adminlist">/admin/message/messages.jsp</result>
+			<result name="orgdetail">/kprc/messages/message-view-org.jsp</result>
+			<result name="studentdetail">/kprc/messages/message-view-student.jsp</result>
+			<result name="schooldetail">/kprc/messages/message-view-school.jsp</result>
+			<result name="tcudetail">/kprc/messages/message-view-tcu.jsp</result>
+			<result name="admindetail">/admin/message/message.jsp</result>
+			<result name="orgsendmessage">/kprc/messages/message-new-org.jsp</result>
+			<result name="studentsendmessage">/kprc/messages/message-new-student.jsp</result>
+			<result name="tcusendmessage">/kprc/messages/message-new-tcu.jsp</result>
+			<result name="schoolsendmessage">/kprc/messages/message-new-school.jsp</result>
+			<result name="adminsendmessage">/admin/message/message-new.jsp</result>
+			<result name="orgsuccess" type="redirectAction">
+				<param name="actionName">recvlist</param>
+				<param name="namespace">/messages</param>
+			</result>
+			<result name="adminsuccess" type="redirectAction">
+				<param name="actionName">recvlist</param>
+				<param name="namespace">/messages</param>
+			</result>
+			<result name="studentsuccess" type="redirectAction">
+				<param name="actionName">recvlist</param>
+				<param name="namespace">/messages</param>
+			</result>
+			<result name="schoolsuccess" type="redirectAction">
+				<param name="actionName">recvlist</param>
+				<param name="namespace">/messages</param>
+			</result>
+			<result name="tcusuccess" type="redirectAction">
+				<param name="actionName">recvlist</param>
+				<param name="namespace">/messages</param>
+			</result>
+			<result name="ajax" type="json">
+			    <param name="root">info</param>
+			</result>
+		</action>
+	</package>
+</struts>
